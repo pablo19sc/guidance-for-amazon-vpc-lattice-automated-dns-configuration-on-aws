@@ -22,8 +22,10 @@ This guidance automates the creation of DNS (Domain Name System) resolution conf
     - [Networking Account Configuration](#networking-account-configuration)
     - [Spoke Account Configuration](#spoke-account-configuration)
     - [AWS CloudFormation Custom Resources](#aws-cloudformation-custom-resources)
-5. [License](#license)
-6. [Contributing](#contributing)
+7. [Related resources](#related-resources)
+8. [Contributors](#contributors)
+9. [License](#license)
+10. [Contributing](#contributing)
 
 ## Overview
 
