@@ -243,7 +243,7 @@ aws cloudformation deploy --stack-name {STACK_NAME} --template-file ./deployment
 aws cloudformation deploy --stack-name {STACK_NAME} --template-file ./deployment/cloudformation/spoke_account.yaml --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM --region {REGION}
 ```
 
-### Terraform
+### Terraform
 
 1. **Networking AWS Account**
     * *Variables needed*: AWS Region to deploy the resources, and Private Hosted Zone ID to create/delete Alias records.
@@ -275,7 +275,7 @@ In the [test](./test/) folder you will find a test environment if you want to ch
 
 ## Uninstall the Guidance
 
-### AWS CloudFormation
+### AWS CloudFormation
 
 1. (Optional) If you want to clean-up the Alias records created, make sure you have removed the corresponding VPC Lattice services (or tags).
 2. In each Spoke Account you want to offboard, delete the guidance automation.
@@ -290,7 +290,7 @@ aws cloudformation delete-stack --stack-name {STACK_NAME} --region {REGION}
 aws cloudformation delete-stack --stack-name {STACK_NAME} --region {REGION}
 ```
 
-### Terraform
+### Terraform
 
 1. (Optional) If you want to clean-up the Alias records created, make sure you have removed the corresponding VPC Lattice services (or tags).
 2. In each Spoke Account you want to offboard, delete the guidance automation.
@@ -380,6 +380,7 @@ For the **creation of Alias records**, the following actions are performed:
 <div align="center">
 
 ![picture](./assets/stepfunctions_creation_parallel.png)
+
 Figure 3. Networking AWS Account state machine: creating of Alias records and tracking in DynamoDB
 </div>
 
@@ -391,6 +392,7 @@ For the **clean-up of Alias records**, the following actions are performed:
     * The Hosted Zone records will be obtained and a [map state](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html) will iterate over them to find the Alias records that need to be deleted.s
 
 ![picture](./assets/stepfunctions_creation_parallel.png)
+
 Figure 4. Networking AWS Account state machine: clean-up of Alias records and DynamoDB item
 </div>
 
