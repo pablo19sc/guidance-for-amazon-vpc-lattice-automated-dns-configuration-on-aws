@@ -391,6 +391,8 @@ For the **clean-up of Alias records**, the following actions are performed:
     * The item in the DynamoDB table will be deleted.
     * The Hosted Zone records will be obtained and a [map state](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html) will iterate over them to find the Alias records that need to be deleted.s
 
+<div align="center">
+
 ![picture](./assets/stepfunctions_creation_parallel.png)
 
 Figure 4. Networking AWS Account state machine: clean-up of Alias records and DynamoDB item
